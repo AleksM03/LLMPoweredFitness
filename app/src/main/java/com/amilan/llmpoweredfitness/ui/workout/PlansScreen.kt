@@ -3,6 +3,7 @@ package com.amilan.llmpoweredfitness.ui.workout
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -28,7 +29,7 @@ fun PlansScreen(
   modifier: Modifier
 ) {
   Column(
-    modifier = modifier.fillMaxWidth(),
+    modifier = modifier.padding(top=CARDS_DP_DISTANCE.dp).fillMaxWidth().fillMaxHeight(),
     verticalArrangement = Arrangement.spacedBy(CARDS_DP_DISTANCE.dp),
     horizontalAlignment = Alignment.CenterHorizontally
   ) {
@@ -40,29 +41,5 @@ fun PlansScreen(
         Modifier.fillMaxWidth(CARD_MAX_WIDTH_SCALE)
       )
     }
-  }
-}
-
-@Composable
-@Preview(showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_YES
-, widthDp = 360, heightDp = 640)
-fun PlansScreenPrev() {
-  val weeks: IntArray = intArrayOf(
-    1,
-    2,
-    3
-  )
-  AppTheme {
-    Scaffold(
-      modifier = Modifier
-        .fillMaxSize()
-    ) { innerPadding ->
-      PlansScreen(
-        weeks,
-        modifier = Modifier
-          .padding(innerPadding)
-      )
-    }
-
   }
 }

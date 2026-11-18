@@ -37,8 +37,8 @@ fun PlanCard(
     (LocalConfiguration.current.screenHeightDp * MAX_HEIGHT_SCALE).dp
   Card(
     modifier = modifier.fillMaxWidth(), colors = CardDefaults.cardColors(
-      containerColor = MaterialTheme.colorScheme.surfaceVariant,
-      contentColor = MaterialTheme.colorScheme.onSurfaceVariant,
+      containerColor = MaterialTheme.colorScheme.secondaryContainer,
+      contentColor = MaterialTheme.colorScheme.onSecondaryContainer,
     )
   ) {
     Box(
