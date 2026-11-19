@@ -9,9 +9,10 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.amilan.llmpoweredfitness.ui.MainScreen
 import com.amilan.llmpoweredfitness.ui.generics.GenericLayout
 import com.amilan.llmpoweredfitness.ui.theme.AppTheme
-import com.amilan.llmpoweredfitness.ui.workout.PlansScreen
+import com.amilan.llmpoweredfitness.ui.workout.ExercisesScreen
 
 val TABS: List<String> = listOf("Plans", "Exercises", "Settings")
 
@@ -24,12 +25,7 @@ class MainActivity : ComponentActivity() {
     }
     setContent {
       AppTheme {
-        GenericLayout(
-          title = TABS[0],
-          content = { PlansScreen(intArrayOf(1, 2, 3), modifier = Modifier) },
-          onTabSelected = {},
-          selectedTab = 0
-        )
+        MainScreen(intArrayOf(1, 2, 3))
       }
     }
   }
@@ -46,8 +42,8 @@ fun ExamplePreview() {
   val exampleData = intArrayOf(1, 2, 3)
   AppTheme {
     GenericLayout(
-      title = TABS[0],
-      content = { PlansScreen(exampleData, modifier = Modifier) },
+      title = TABS[1],
+      content = { ExercisesScreen(exampleData, modifier = Modifier) },
       onTabSelected = {},
       selectedTab = 0
     )

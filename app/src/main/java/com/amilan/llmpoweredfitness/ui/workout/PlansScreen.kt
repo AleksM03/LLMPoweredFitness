@@ -10,7 +10,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.amilan.llmpoweredfitness.ui.generics.AddButton
-import com.amilan.llmpoweredfitness.ui.workout.components.PlanCard
+import com.amilan.llmpoweredfitness.ui.workout.components.PlanCardContent
+import com.amilan.llmpoweredfitness.ui.workout.components.WorkoutCard
 
 private const val CARD_MAX_WIDTH_SCALE = 0.85f
 
@@ -20,7 +21,7 @@ private const val CARDS_DP_DISTANCE = 13
 @Composable
 fun PlansScreen(
   weeks: IntArray,
-  modifier: Modifier
+  modifier: Modifier = Modifier
 ) {
   Column(
     modifier = modifier
@@ -31,9 +32,8 @@ fun PlansScreen(
     horizontalAlignment = Alignment.CenterHorizontally
   ) {
     for (week in weeks) {
-      PlanCard(
-        weekNumber = week,
-        isCompleted = false,
+      WorkoutCard(
+        content = {PlanCardContent(text = "Week $week", isCompleted = false)},
         onButtonClick = {},
         Modifier.fillMaxWidth(CARD_MAX_WIDTH_SCALE)
       )

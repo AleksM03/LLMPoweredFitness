@@ -22,7 +22,7 @@ fun Footer(
         icon = {
           when (index) {
             0 -> Icon(
-              painter = painterResource(R.drawable.ic_exercise),
+              painter = painterResource(R.drawable.ic_week),
               contentDescription = ""
             )
 
